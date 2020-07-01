@@ -11,10 +11,10 @@ import torch.utils.data
 
 from scipy.stats import pearsonr,spearmanr
 
-from src.utils import pack_sequences, unpack_sequences
-from src.alphabets import Uniprot21
-from src.alignment import nw_score
-from src.metrics import average_precision
+from bepler_embedding.utils import pack_sequences, unpack_sequences
+from bepler_embedding.alphabets import Uniprot21
+from bepler_embedding.alignment import nw_score
+from bepler_embedding.metrics import average_precision
 
 
 def encode_sequence(x, alphabet):

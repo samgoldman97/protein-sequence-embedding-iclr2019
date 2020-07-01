@@ -13,13 +13,13 @@ from torch.autograd import Variable
 from torch.nn.utils.rnn import PackedSequence, pack_padded_sequence, pad_packed_sequence
 import torch.utils.data
 
-from src.alphabets import Uniprot21
-import src.scop as scop
-from src.utils import pack_sequences, unpack_sequences
-from src.utils import PairedDataset, AllPairsDataset, collate_paired_sequences
-from src.utils import MultinomialResample
-import src.models.embedding
-import src.models.comparison
+from bepler_embedding.alphabets import Uniprot21
+import bepler_embedding.scop as scop
+from bepler_embedding.utils import pack_sequences, unpack_sequences
+from bepler_embedding.utils import PairedDataset, AllPairsDataset, collate_paired_sequences
+from bepler_embedding.utils import MultinomialResample
+import bepler_embedding.models.embedding
+import bepler_embedding.models.comparison
 
 
 def main():

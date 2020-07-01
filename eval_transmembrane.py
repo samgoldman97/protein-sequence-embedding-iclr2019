@@ -9,9 +9,9 @@ import torch.nn.functional as F
 from torch.nn.utils.rnn import PackedSequence
 import torch.utils.data
 
-from src.alphabets import Uniprot21
-from src.parse_utils import parse_3line
-import src.transmembrane as tm
+from bepler_embedding.alphabets import Uniprot21
+from bepler_embedding.parse_utils import parse_3line
+import bepler_embedding.transmembrane as tm
 
 def load_3line(path, alphabet):
     with open(path, 'rb') as f:

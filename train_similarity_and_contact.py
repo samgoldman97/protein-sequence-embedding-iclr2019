@@ -15,15 +15,15 @@ from torch.autograd import Variable
 from torch.nn.utils.rnn import PackedSequence, pack_padded_sequence, pad_packed_sequence
 import torch.utils.data
 
-from src.alphabets import Uniprot21
-import src.scop as scop
-from src.utils import pack_sequences, unpack_sequences
-from src.utils import ContactMapDataset, collate_lists
-from src.utils import PairedDataset, AllPairsDataset, collate_paired_sequences
-from src.utils import MultinomialResample
-import src.models.embedding
-import src.models.multitask
-from src.metrics import average_precision
+from bepler_embedding.alphabets import Uniprot21
+import bepler_embedding.scop as scop
+from bepler_embedding.utils import pack_sequences, unpack_sequences
+from bepler_embedding.utils import ContactMapDataset, collate_lists
+from bepler_embedding.utils import PairedDataset, AllPairsDataset, collate_paired_sequences
+from bepler_embedding.utils import MultinomialResample
+import bepler_embedding.models.embedding
+import bepler_embedding.models.multitask
+from bepler_embedding.metrics import average_precision
 
 cmap_paths = glob.glob('data/SCOPe/pdbstyle-2.06/*/*.png')
 cmap_dict = {os.path.basename(path)[:7] : path for path in cmap_paths}

@@ -11,9 +11,9 @@ from torch.autograd import Variable
 import torch.utils.data
 from torch.nn.utils.rnn import pack_padded_sequence
 
-import src.fasta as fasta
-from src.alphabets import Uniprot21
-import src.models.sequence
+import bepler_embedding.fasta as fasta
+from bepler_embedding.alphabets import Uniprot21
+import bepler_embedding.models.sequence
 
 parser = argparse.ArgumentParser('Train sequence model')
 

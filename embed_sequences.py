@@ -8,9 +8,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from src.alphabets import Uniprot21
-import src.fasta as fasta
-import src.models.sequence
+from bepler_embedding.alphabets import Uniprot21
+import bepler_embedding.fasta as fasta
+import bepler_embedding.models.sequence
 
 
 def unstack_lstm(lstm):
