@@ -123,7 +123,7 @@ def load_pretrained_embedding(in_file : Optional[str] = None) -> nn.Module:
                 os.makedirs(DEFAULT_CACHE_PATH, exist_ok=True)
 
             # Download the zipped file first
-            logging.info(f"Unable to find saved models, downloading to {temp_file}")
+            logging.info(f"Unable to find saved models, downloading to {model_name}")
             download_ftp(MODEL_MIRROR_LINK, model_name)
             logging.info(f"Done downloading.") 
             # Unpack zip
