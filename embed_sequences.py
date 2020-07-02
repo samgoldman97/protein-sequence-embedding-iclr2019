@@ -29,7 +29,6 @@ def unstack_lstm(lstm):
             src = attr + str(i)
             getattr(layer, dest).data[:] = getattr(lstm, src)
             #setattr(layer, dest, getattr(lstm, src))
-            
             dest = attr + '0_reverse'
             src = attr + str(i) + '_reverse'
             getattr(layer, dest).data[:] = getattr(lstm, src)
@@ -101,7 +100,7 @@ def load_model(path, use_cuda=False):
     if use_cuda:
         encoder.cuda()
 
-    if type(encoder) is src.models.sequence.BiLM:
+    if type(encoder) is bepler_embedding.models.sequence.BiLM:
         # model is only the LM
         return encoder.encode, None, None
 
@@ -112,7 +111,6 @@ def load_model(path, use_cuda=False):
     proj = encoder.proj
 
     return lm_embed, lstm_stack, proj
-
 
 def main():
     import argparse
