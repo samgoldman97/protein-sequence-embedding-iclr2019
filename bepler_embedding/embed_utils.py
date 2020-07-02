@@ -38,7 +38,7 @@ DEFAULT_CACHE_PATH = os.path.join(torch_cache_home, 'bepler_models_cache')
 MODEL_LINK  = "http://bergerlab-downloads.csail.mit.edu/bepler-protein-sequence-embeddings-from-structure-iclr2019/pretrained_models.tar.gz"
 
 # Mirror containing just the state dict
-MODEL_MIRROR_LINK= "https://www.dropbox.com/s/kvebr0c038z9bhm/bepler_SCOPCM_state_dict.pk?dl=0"
+MODEL_MIRROR_LINK= "https://www.dropbox.com/s/kvebr0c038z9bhm/bepler_SCOPCM_state_dict.pk?dl=1"
 
 # Make alphabet
 uniprot_alphabet = alphabets.Uniprot21()
@@ -124,7 +124,8 @@ def load_pretrained_embedding(in_file : Optional[str] = None) -> nn.Module:
 
             # Download the zipped file first
             logging.info(f"Unable to find saved models, downloading to {model_name}")
-            download_ftp(MODEL_MIRROR_LINK, model_name)
+            print(f"Unable to find saved models, downloading to {model_name}")
+            download_ftp(MODEL_MIRROR_LINK, pretrained_loc)
             logging.info(f"Done downloading.") 
             # Unpack zip
             #shutil.unpack_archive(temp_file, DEFAULT_CACHE_PATH)
