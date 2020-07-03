@@ -222,12 +222,11 @@ def embed_sequences(model : nn.Module, seqs : List[str],
         model.eval()
         # 
         for batch in tqdm(loader):
-            X, order = utils.pack_sequences(encoded_seqs)
+            X, order = utils.pack_sequences(batch)
             if gpu: 
                 X = X.cuda()
 
             out = model.forward(X)
             unpacked = utils.unpack_sequences(out, order)
             return_seqs.extend([i.detach().cpu().numpy() for i in unpacked])
-
     return return_seqs
